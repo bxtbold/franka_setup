@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "franka-bridge"
+version = "0.1.0"
+description = "ZeroMQ bridge server between ROS Franka stack and non-ROS clients."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "pyzmq>=25.1.0",
+  "msgpack>=1.0.7",
+]
+
+[project.scripts]
+franka-bridge-server = "franka_bridge.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["franka_bridge*"]

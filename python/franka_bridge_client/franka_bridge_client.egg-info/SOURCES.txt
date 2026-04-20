@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+./franka_bridge_client/__init__.py
+./franka_bridge_client/client.py
+franka_bridge_client.egg-info/PKG-INFO
+franka_bridge_client.egg-info/SOURCES.txt
+franka_bridge_client.egg-info/dependency_links.txt
+franka_bridge_client.egg-info/requires.txt
+franka_bridge_client.egg-info/top_level.txt

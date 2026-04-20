@@ -1,0 +1,34 @@
+services:
+  franka_setup:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        LIBFRANKA_REF: ${LIBFRANKA_REF:-0.8.0}
+        FRANKA_ROS_REF: ${FRANKA_ROS_REF:-0.8.0}
+        SERL_FRANKA_CONTROLLERS_REF: main
+    image: franka_setup:noetic
+    container_name: franka_setup
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
+    environment:
+      DISPLAY: ${DISPLAY:-:0}
+      QT_X11_NO_MITSHM: ${QT_X11_NO_MITSHM:-1}
+      ROBOT_IP: ${ROBOT_IP:-172.16.0.2}
+      LOAD_GRIPPER: ${LOAD_GRIPPER:-false}
+      LAUNCH_SERL_CONTROLLER: ${LAUNCH_SERL_CONTROLLER:-1}
+      LAUNCH_ROSCORE: ${LAUNCH_ROSCORE:-1}
+      FRANKA_CMD_PORT: ${FRANKA_CMD_PORT:-5555}
+      FRANKA_STATE_PORT: ${FRANKA_STATE_PORT:-5556}
+      FRANKA_ENABLE_GRIPPER_PORTS: ${FRANKA_ENABLE_GRIPPER_PORTS:-0}
+      FRANKA_GRIPPER_CMD_PORT: ${FRANKA_GRIPPER_CMD_PORT:-5557}
+      FRANKA_GRIPPER_STATE_PORT: ${FRANKA_GRIPPER_STATE_PORT:-5558}
+      FRANKA_STATE_HZ: ${FRANKA_STATE_HZ:-20}
+      FRANKA_GRIPPER_STATE_HZ: ${FRANKA_GRIPPER_STATE_HZ:-20}
+      FRANKA_COMPLIANCE_NODE: ${FRANKA_COMPLIANCE_NODE:-/cartesian_impedance_controllerdynamic_reconfigure_compliance_param_node}
+      FRANKA_TRANSLATIONAL_STIFFNESS: ${FRANKA_TRANSLATIONAL_STIFFNESS:-2000.0}
+      FRANKA_ROTATIONAL_STIFFNESS: ${FRANKA_ROTATIONAL_STIFFNESS:-150.0}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./logs:/opt/franka_setup/logs

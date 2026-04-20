@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "franka-bridge-client"
+version = "0.1.0"
+description = "ROS-free Python client for franka-bridge split-port sockets."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "pyzmq>=25.1.0",
+  "msgpack>=1.0.7",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["franka_bridge_client*"]

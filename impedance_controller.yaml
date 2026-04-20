@@ -1,0 +1,55 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      joint1_nullspace_stiffness: 100.0
+      name: Default
+      nullspace_stiffness: 0.2
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      rotational_Ki: 0.0
+      rotational_clip_neg_x: 0.05
+      rotational_clip_neg_y: 0.05
+      rotational_clip_neg_z: 0.05
+      rotational_clip_x: 0.05
+      rotational_clip_y: 0.05
+      rotational_clip_z: 0.05
+      rotational_damping: 5.0
+      rotational_stiffness: 80.0
+      state: true
+      translational_Ki: 0.0
+      translational_clip_neg_x: 0.01
+      translational_clip_neg_y: 0.01
+      translational_clip_neg_z: 0.01
+      translational_clip_x: 0.01
+      translational_clip_y: 0.01
+      translational_clip_z: 0.01
+      translational_damping: 90.0
+      translational_stiffness: 1100.0
+      type: ''
+    state: []
+  joint1_nullspace_stiffness: 100.0
+  nullspace_stiffness: 0.2
+  rotational_Ki: 0.0
+  rotational_clip_neg_x: 0.05
+  rotational_clip_neg_y: 0.05
+  rotational_clip_neg_z: 0.05
+  rotational_clip_x: 0.05
+  rotational_clip_y: 0.05
+  rotational_clip_z: 0.05
+  rotational_damping: 5.0
+  rotational_stiffness: 80.0
+  translational_Ki: 0.0
+  translational_clip_neg_x: 0.01
+  translational_clip_neg_y: 0.01
+  translational_clip_neg_z: 0.01
+  translational_clip_x: 0.01
+  translational_clip_y: 0.01
+  translational_clip_z: 0.01
+  translational_damping: 90.0
+  translational_stiffness: 1100.0
+state: []
